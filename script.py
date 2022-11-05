@@ -14,24 +14,24 @@ print("Iniciando o processo de instalação de ferramentas básicas via apt inst
 print('''
 	[+]Veja a baixo as ferramentas a serem instaladas[+]
 
-	[+]1-Python2	[+]5-Diodon OBS: P/Configura Win+V do teclado
-	[+]2-Git        [+]6-Firefox v.50 OBS: P/Acesso remoto aos Roteadores
-	[+]3-Wget       [+]7-BitDefender 
-	[+]4-pip        [+]8-Nmap''')
+	[+]1-Diodon OBS: P/Configura Win+V do teclado
+	[+]2-Firefox v.50 OBS: P/Acesso remoto aos Roteadores
+	[+]3-BitDefender
+	[+]4-Nmap
+	[+]5-figlet''')
 import time
 time.sleep(5)
-print("\nInstalando Python, Git, Wget, Pip, Diodon, Nmap...\n")
+print("\nInstalando Diodon, Nmap, Figlet...\n")
 time.sleep(3)
-os.system("apt install -y python2 git wget pip diodon nmap")
+os.system("apt install diodon nmap figlet -y")
 
 print("\nInstalando Brave...\n")
 time.sleep(3)
 os.system("apt install apt-transport-https curl")
-os.system("curl -fsSLo /usr/share/keyrihttps://ftp.mozilla.org/pub/firefox/releases/50.0/linux-x86_64/br/firefox-50.0.tar.bz2ngs/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg")
+os.system("curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg")
 os.system('echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main |sudo tee /etc/apt/sources.list.d/brave-browser-release.list" ')
-os.system("apt -y update")
-os.system("apt -y upgrade")
-os.system("apt install brave-browser")
+os.system("apt update")
+os.system("apt install brave-browser -y")
 
 print("\nFazendo Download do Frefox-50.0...\n")
 time.sleep(3)
