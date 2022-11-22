@@ -5,29 +5,35 @@ print('''
         [+]     S.O Ubuntu 18 - GOX Internet Suporte    [+]
         [+]---------------------------------------------[+]''')
 import os
-print("\nAtualizando Repositório Ubuntu...\n")
+print("\n[+]Atualizando Repositório Ubuntu...[+]\n")
 os.system("apt -y update")
 os.system("apt -y upgrade")
 print('''--------------------------------------------------------------------------------------
    [+] Update e Upgrade [OK].\n''')
 print("Iniciando o processo de instalação de ferramentas básicas via apt install...")
 print('''
-	[+]Veja a baixo as ferramentas a serem instaladas[+]
-
-	[+]1-Diodon OBS: P/Configura Win+V do teclado
-	[+]2-Firefox v.50 OBS: P/Acesso remoto aos Roteadores
-	[+]3-BitDefender
-	[+]4-Nmap
-	[+]5-figlet''')
+[+]Veja a baixo as ferramentas a serem instaladas[+]
+--------------------------------------------------------------------------------------
+[+]1-Diodon       #P/Configura Win+V do teclado
+[+]2-Firefox v.50 #P/Acesso remoto aos Roteadores
+[+]3-BitDefender  #Anti-Virus para sistema
+[+]4-Nmap         #Scan de rede para verificar portas, tanta esternas quanto internas
+[+]5-iWatch       #Ferramenta de monitoramento de pastas e arquivos
+[+]6-figlet       #Apenas customizar terminal rs
+--------------------------------------------------------------------------------------''')
 import time
 time.sleep(5)
-print("\nInstalando Diodon, Nmap, Figlet...\n")
+print("\nInstalando Diodon, Nmap, Figlet, Iwatch...\n")
 time.sleep(3)
-os.system("apt install diodon nmap figlet -y")
+os.system("apt install diodon nmap figlet iwatch -y")
+
+os.system("figlet GOX Internet")
+print("aguarde...")
+time.sleep(5)
 
 print("\nInstalando Brave...\n")
 time.sleep(3)
-os.system("apt install apt-transport-https curl")
+os.system("apt install apt-transport-https curl -y")
 os.system("curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg")
 os.system('echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main |sudo tee /etc/apt/sources.list.d/brave-browser-release.list" ')
 os.system("apt update")
